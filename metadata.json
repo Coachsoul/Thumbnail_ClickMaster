@@ -1,0 +1,7 @@
+{
+  "name": "ClickMaster 썸네일 만들기",
+  "description": "A professional AI-powered thumbnail generator that applies deep psychological principles and visual salience to maximize CTR using Gemini 3 Pro.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
