@@ -298,13 +298,25 @@ const App: React.FC = () => {
                   </div>
 
                   {/* Description & Keywords */}
-                  <div className="bg-slate-900 rounded-2xl p-6 border border-slate-800 shadow-xl">
-                    <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-sm font-bold">영상 상세 설명 (하단 #해시태그 포함)</h3>
-                      <button onClick={() => copyToClipboard(result.fullDescription)} className="text-xs bg-slate-800 hover:bg-slate-700 px-3 py-1.5 rounded-lg border border-slate-700 transition-colors">설명 복사</button>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="bg-slate-900 rounded-2xl p-6 border border-slate-800 shadow-xl">
+                      <div className="flex items-center justify-between mb-4">
+                        <h3 className="text-sm font-bold">영상 상세 설명 (하단 #해시태그 포함)</h3>
+                        <button onClick={() => copyToClipboard(result.fullDescription)} className="text-xs bg-slate-800 hover:bg-slate-700 px-3 py-1.5 rounded-lg border border-slate-700 transition-colors">설명 복사</button>
+                      </div>
+                      <div className="bg-slate-950 rounded-xl p-4 border border-slate-800 h-[300px] overflow-y-auto">
+                        <pre className="whitespace-pre-wrap text-sm text-slate-400 font-sans leading-relaxed">{result.fullDescription}</pre>
+                      </div>
                     </div>
-                    <div className="bg-slate-950 rounded-xl p-4 border border-slate-800 max-h-[400px] overflow-y-auto">
-                      <pre className="whitespace-pre-wrap text-sm text-slate-400 font-sans leading-relaxed">{result.fullDescription}</pre>
+
+                    <div className="bg-slate-900 rounded-2xl p-6 border border-slate-800 shadow-xl">
+                      <div className="flex items-center justify-between mb-4">
+                        <h3 className="text-sm font-bold">고정 댓글 (Pinned Comment)</h3>
+                        <button onClick={() => copyToClipboard(result.pinnedComment)} className="text-xs bg-slate-800 hover:bg-slate-700 px-3 py-1.5 rounded-lg border border-slate-700 transition-colors">댓글 복사</button>
+                      </div>
+                      <div className="bg-slate-950 rounded-xl p-4 border border-slate-800 h-[300px] overflow-y-auto flex flex-col justify-center">
+                        <p className="text-sm text-slate-300 italic text-center leading-relaxed">"{result.pinnedComment}"</p>
+                      </div>
                     </div>
                   </div>
 

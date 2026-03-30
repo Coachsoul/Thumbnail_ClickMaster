@@ -34,9 +34,10 @@ export class GeminiService {
       4. Full Description: A professional SEO-optimized description. **At the very end of the description, you MUST include 3-5 high-impact #hashtags (with # prefix).**
       5. Keywords: A separate comma-separated list of 10-15 keywords **WITHOUT** the '#' symbol (for the YouTube tags field).
       6. Analysis: A strategic breakdown of why this content will perform well.
+      7. Pinned Comment: A high-engagement pinned comment that encourages viewers to subscribe, comment, or watch another related video.
 
       Return the output strictly in JSON format matching the provided schema. 
-      The 'titles', 'copy', 'fullDescription', and 'keywords' MUST be in ${targetLang}. 
+      The 'titles', 'copy', 'fullDescription', 'keywords', and 'pinnedComment' MUST be in ${targetLang}. 
       The 'analysis' and 'psychology' fields can be in Korean.`,
       config: {
         responseMimeType: "application/json",
@@ -47,6 +48,7 @@ export class GeminiService {
             titles: { type: Type.ARRAY, items: { type: Type.STRING } },
             fullDescription: { type: Type.STRING, description: "Description text including #hashtags at the bottom." },
             keywords: { type: Type.STRING, description: "Comma separated keywords WITHOUT # prefix." },
+            pinnedComment: { type: Type.STRING, description: "A high-engagement pinned comment." },
             hooks: {
               type: Type.ARRAY,
               items: {
@@ -61,7 +63,7 @@ export class GeminiService {
               }
             }
           },
-          required: ['analysis', 'titles', 'fullDescription', 'keywords', 'hooks']
+          required: ['analysis', 'titles', 'fullDescription', 'keywords', 'hooks', 'pinnedComment']
         }
       }
     });

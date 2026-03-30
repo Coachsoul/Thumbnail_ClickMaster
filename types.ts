@@ -22,6 +22,7 @@ export interface ThumbnailResult {
   fullDescription: string;
   hashtags: string;
   keywords: string;
+  pinnedComment: string;
 }
 
 export enum GenerationStatus {
